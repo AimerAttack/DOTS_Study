@@ -17,3 +17,9 @@ public partial class CubeRotateWithIJobEntitySystemGroup : SceneSystemGroup
 {
     protected override string SceneName => "RotateCubeWithIJobEntityAuthoring";
 }
+
+[UpdateInGroup(typeof(Lesson0SystemGroup))]
+public partial class CubeEntitiesByPrefabSystemGroup : SceneSystemGroup
+{
+    protected override string SceneName => "CubeEntitiesByPrefab";
+}

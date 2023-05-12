@@ -37,6 +37,7 @@ namespace DefaultNamespace.Lesson2
             {
                 deltaTime = SystemAPI.Time.DeltaTime
             };
+            
             job.ScheduleParallel();
         }
     }
