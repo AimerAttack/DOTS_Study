@@ -1,12 +1,11 @@
 using Unity.Burst;
 using Unity.Entities;
-using Unity.Mathematics;
 using Unity.Transforms;
 
 namespace DefaultNamespace
 {
     [BurstCompile]
-    public partial struct CubeRotateSystem : ISystem
+    public partial struct RedCubeRotateSystem : ISystem
     {
         [BurstCompile]
         public void OnCreate(ref SystemState state)
@@ -24,10 +23,10 @@ namespace DefaultNamespace
         public void OnUpdate(ref SystemState state)
         {
             var deltaTime = SystemAPI.Time.DeltaTime;
-            foreach (var (transform,speed) in SystemAPI.Query<RefRW<LocalTransform>,RefRO<RotateSpeed>>())
+            foreach (var (transform,speed,tag) in SystemAPI.Query<RefRW<LocalTransform>,RefRO<RotateSpeed>,RefRO<RedCubeTag>>())
             {
-                transform.ValueRW = transform.ValueRO.RotateY(speed.ValueRO.rotateSpeed * deltaTime);
+                transform.ValueRW = transform.ValueRW.RotateY(speed.ValueRO.rotateSpeed * deltaTime);
             }
-        }
+        } 
     }
 }
