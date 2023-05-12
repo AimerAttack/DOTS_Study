@@ -5,6 +5,7 @@ using Unity.Transforms;
 namespace DefaultNamespace
 {
     [BurstCompile]
+    [UpdateInGroup(typeof(CubeRotateSystemGroup))]
     public partial struct BlueCubeRotateSystem : ISystem
     {
         [BurstCompile]
