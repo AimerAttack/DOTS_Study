@@ -1,5 +1,6 @@
 using DefaultNamespace.Lesson5.Aspect;
 using DefaultNamespace.Lesson5.Authoring;
+using DefaultNamespace.Lesson5.Group;
 using DefaultNamespace.Lesson5.Job;
 using Unity.Burst;
 using Unity.Collections;
@@ -10,6 +11,7 @@ using NotImplementedException = System.NotImplementedException;
 namespace DefaultNamespace.Lesson5.System
 {
     [BurstCompile]
+    [UpdateInGroup(typeof(L5Group))]
     public partial struct L5CubeCreateSystem : ISystem
     {
         private int totalCount;

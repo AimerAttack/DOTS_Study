@@ -1,3 +1,4 @@
+using DefaultNamespace.Lesson5.Group;
 using DefaultNamespace.Lesson5.Job;
 using Unity.Burst;
 using Unity.Collections;
@@ -8,6 +9,7 @@ namespace DefaultNamespace.Lesson5.System
 {
     [BurstCompile]
     [UpdateAfter(typeof(L5CubeCreateSystem))]
+    [UpdateInGroup(typeof(L5Group))]
     public partial struct L5CubeLifeSystem : ISystem
     {
         
