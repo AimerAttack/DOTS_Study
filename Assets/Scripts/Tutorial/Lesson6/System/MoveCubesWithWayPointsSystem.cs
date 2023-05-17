@@ -5,6 +5,7 @@ using Unity.Burst;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
+using UnityEngine;
 using NotImplementedException = System.NotImplementedException;
 
 namespace DefaultNamespace.Lesson6.System
@@ -16,6 +17,8 @@ namespace DefaultNamespace.Lesson6.System
         [BurstCompile]
         public void OnCreate(ref SystemState state)
         {
+            Debug.Log("MoveCubesWithWayPointsSystem OnCreate");
+            state.RequireForUpdate<WayPoint>();
         }
 
         [BurstCompile]
@@ -26,6 +29,7 @@ namespace DefaultNamespace.Lesson6.System
         [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
+            Debug.Log("MoveCubesWithWayPointsSystem OnUpdate");
             var path = SystemAPI.GetSingletonBuffer<WayPoint>();
             var deltaTime = SystemAPI.Time.DeltaTime;
             if (!path.IsEmpty)
