@@ -4,6 +4,7 @@ using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Jobs;
+using UnityEngine;
 using NotImplementedException = System.NotImplementedException;
 
 namespace DefaultNamespace.Lesson5.Job
@@ -20,6 +21,7 @@ namespace DefaultNamespace.Lesson5.Job
         public void Execute(int index)
         {
             Cubes[index] = Writer.Instantiate(index, ArcheType);
+            Debug.Log($"{index}");
         }
     }
 }

@@ -6,6 +6,7 @@ using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Jobs;
+using UnityEngine;
 using NotImplementedException = System.NotImplementedException;
 
 namespace DefaultNamespace.Lesson5.System
@@ -37,8 +38,6 @@ namespace DefaultNamespace.Lesson5.System
                 state.Enabled = false;
                 return;
             }
-            RunCreateCubeJob(ref state,generator);
-            state.Enabled = false;
             if (timer > generator.Interval)
             {
                 timer -= generator.Interval;
@@ -69,6 +68,7 @@ namespace DefaultNamespace.Lesson5.System
             ecb.Dispose();
             state.Dependency = jobLife.ScheduleParallel(state.Dependency);
             state.Dependency.Complete();
+            Debug.Log("systemlog");
             
             totalCount += generater.CreateNumPerInterval;
             cubes.Dispose();
