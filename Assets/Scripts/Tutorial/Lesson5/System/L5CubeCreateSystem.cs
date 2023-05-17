@@ -66,6 +66,7 @@ namespace DefaultNamespace.Lesson5.System
             //这里要先将ecb进行playback，否则后续的jobLife检测不到已经创建的entity，无法进行生命周期的初始化
             ecb.Playback(state.EntityManager);
             ecb.Dispose();
+            
             state.Dependency = jobLife.ScheduleParallel(state.Dependency);
             state.Dependency.Complete();
             Debug.Log("systemlog");

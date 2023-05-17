@@ -19,7 +19,6 @@ namespace DefaultNamespace
         {
             if (!initialized)
             {
-                Debug.Log("SceneGroup:" + SceneName);
                 if (SceneManager.GetActiveScene().isLoaded)
                 {
                     var subScene = Object.FindObjectOfType<SubScene>();
