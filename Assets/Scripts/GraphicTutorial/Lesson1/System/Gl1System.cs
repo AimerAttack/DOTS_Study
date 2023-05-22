@@ -35,6 +35,10 @@ namespace GraphicTutorial.Lesson1.System
             var generaterData = SystemAPI.GetSingleton<PrefabGeneraterData>();
             var entity = state.EntityManager.Instantiate(generaterData.prefab);
             state.EntityManager.AddComponent<CustomColor>(entity);
+            state.EntityManager.AddComponentData(entity, new CustomMeshAndMaterial()
+            {
+
+            });
         }
 
         public void OnStopRunning(ref SystemState state)

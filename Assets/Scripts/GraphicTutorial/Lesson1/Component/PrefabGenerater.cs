@@ -12,6 +12,10 @@ namespace GraphicTutorial.Lesson1
     public class PrefabGenerater : MonoBehaviour
     {
         public GameObject prefab;
+        public Mesh Mesh1;
+        public Mesh Mesh2;
+        public Material Mat1;
+        public Material Mat2;
 
         public class Baker : Baker<PrefabGenerater>
         {
@@ -19,7 +23,7 @@ namespace GraphicTutorial.Lesson1
             {
                 AddComponent(new PrefabGeneraterData()
                 {
-                    prefab = GetEntity(authoring.prefab)
+                    prefab = GetEntity(authoring.prefab),
                 });
             }
         }
