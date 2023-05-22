@@ -14,7 +14,7 @@ namespace GraphicTutorial.Lesson1.System
         public void OnCreate(ref SystemState state)
         {
             Debug.Log("OnCreate");
-            // state.RequireForUpdate<PrefabGenerater>();       
+            state.RequireForUpdate<PrefabGenerater>();       
         }
 
         [BurstCompile]
